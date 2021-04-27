@@ -10,6 +10,8 @@
     * 資料讀取/處理/產生訓練集與測試集
     > -  [R code](https://github.com/a10293499/machine-learning-in-R-decision-tree-and-randomforest-/blob/main/Data%20processing)
     * model建立_Decision tree
-    > -  [R code](https://github.com/a10293499/machine-learning-in-R-decision-tree-and-randomforest-/blob/main/decision%20tree)
+    > - [R code](https://github.com/a10293499/machine-learning-in-R-decision-tree-and-randomforest-/blob/main/decision%20tree)
+    > 
+    > - ![決策樹結果](https://github.com/a10293499/machine-learning-in-R-decision-tree-and-randomforest-/blob/main/%E6%B1%BA%E7%AD%96%E6%A8%B9.png)
     * model建立_Random Forest
     > -  [R code](https://github.com/a10293499/machine-learning-in-R-decision-tree-and-randomforest-/blob/main/randomforest)
