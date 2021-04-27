@@ -1,4 +1,6 @@
+#read data
 heart <- read.csv("heart.csv",header = T)
+
 summary(heart)
 str(heart)
 
@@ -46,11 +48,10 @@ library(rpart.plot)
 
 fit <- rpart(output~., data=traindata,method='class')
 rpart.plot(fit)
-
-
 printcp(fit)
 plotcp(fit)
 
+#predict
 predict_dec <- predict(fit, newdata = testdata, type='class')
 tbl_dec <- table(predict_dec,testdata$output)
 tbl_dec
@@ -77,6 +78,8 @@ train_cmodel2
 library(party)
 fit_ctree <- ctree(output~., data= traindata)
 plot(fit_ctree)
+
+#predict
 predict_ctree <- predict(fit_ctree,newdata= testdata)
 predict_ctree
 tbl_ctree <-table(predicted=predict_ctree,actual = testdata$output )
