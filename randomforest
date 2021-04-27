@@ -1,0 +1,29 @@
+#randomforest
+library(randomForest)
+set.seed(111)
+fit.rf <- randomForest(output~., data= traindata) #na.action = na.omit)
+fit.rf
+tbl.rf <- fit.rf$confusion[,c(1,2)]
+accuracy_oob <- sum(diag(tbl.rf))/sum(tbl.rf)
+accuracy_oob
+
+plot(fit.rf)
+#black:whole OOB error rate
+#ntree=200 become stable  
+
+
+#adjust mtry
+tuneRF(x=traindata[,-12],y=traindata[,12])
+#mtry=3 have minimum error
+fit.rf$mtry
+#orginal model setting is 3
+
+#variance importance
+round(importance(fit.rf),2)
+varImpPlot(fit.rf)
+
+#predict
+predict.rf <- predict(fit.rf,newdata = testdata)
+tbl.rf <-table(predict=predict.rf, actual = testdata$output)
+accuracy_rf <- sum(diag(tbl.rf))/sum(tbl.rf)
+accuracy_rf
